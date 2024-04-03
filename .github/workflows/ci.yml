@@ -3,31 +3,49 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - mastmainer
+  workflow_dispatch:
+
 
 jobs:
+  open-issue:
+    name: Open new issue
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Open issue
+        run: |
+          gh issue --repo ${{ github.repository }} \
+            create --title "Issue title" --body "Issue body"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   build-and-push:
-    name: 'Build and push'
+    name: Build and push
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Generate sha
-      id: generate_sha
-      run: |
-        SHA=$(echo $GITHUB_SHA | head -c7)
-        echo "sha=${SHA}" >> $GITHUB_OUTPUT
-    - name: Build docker image
-      run: docker build -t jhonatasilva/devops_nlw:${{ steps.generate_sha.outputs.sha }} .
+      - name: Generate sha
+        id: generate_sha
+        run: |
+          SHA=$(echo $GITHUB_SHA | head -c7)
+          echo "sha=${SHA}" >> $GITHUB_OUTPUT
 
-    - name: Log into the container registry
-      uses: docker/login-action@v3
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build docker image
+        run: docker build -t jhonatasilva/devops_nlw:${{ steps.generate_sha.outputs.sha }} .
 
-    - name: Push image
-      run: |
-        docker push jhonatasilva/devops_nlw:${{ steps.generate_sha.outputs.sha }}
+      - name: Log into the container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push image
+        run: |
+          docker push jhonatasilva/devops_nlw:${{ steps.generate_sha.outputs.sha }}
