@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
   steps:
-  - name: Checkout
-    uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
 
   # Configuração para criar uma tag na imagem docker usando o hash do commit
   - name: Generate sha 
