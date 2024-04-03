@@ -5,10 +5,6 @@ on:
     branches:
       - main
 
-env:
-  USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
-  PASSWORD: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-
 jobs:
   build-and-push:
     name: Build and push
@@ -28,10 +24,10 @@ jobs:
         run: docker build -t jhonatasilva/devops_nlw:${{ steps.generate_sha.outputs.sha }} .
 
       - name: Log into the container registry
-        uses: docker/login-action@v3
+        uses: docker/login-action@v1
         with:
-          username: ${{ env.USERNAME }}
-          password: ${{ env.PASSWORD }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Push image
         run: |
