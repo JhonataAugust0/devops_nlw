@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - mastmainer
+      - main
   workflow_dispatch:
 
 
@@ -49,3 +49,4 @@ jobs:
       - name: Push image
         run: |
           docker push jhonatasilva/devops_nlw:${{ steps.generate_sha.outputs.sha }}
+          
