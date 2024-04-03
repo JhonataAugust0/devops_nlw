@@ -24,11 +24,11 @@ jobs:
         run: docker build -t jhonatasilva/devops_nlw:${{ steps.generate_sha.outputs.sha }} .
 
       - name: Log into the container registry
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3.1.0
         with:
-          registry: my.private.registry.com
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PAT }}
+          password: ${{ secrets.CI }}
+
 
       - name: Push image
         run: |
