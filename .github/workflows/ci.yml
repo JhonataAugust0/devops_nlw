@@ -24,7 +24,7 @@ jobs:
         run: docker build -t jhonatasilva/devops_nlw:${{ steps.generate_sha.outputs.sha }} .
 
       - name: Log into the container registry
-        uses: docker/login-action@v3
+        uses: docker/login-action@v3.1.0
         with:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PAT }}
