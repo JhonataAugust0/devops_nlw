@@ -28,6 +28,7 @@ jobs:
         with:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PAT }}
+          ecr: false
 
       - name: Push image
         run: |
