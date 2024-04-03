@@ -4,24 +4,8 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
-
 
 jobs:
-  open-issue:
-    name: Open new issue
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      issues: write
-    steps:
-      - name: Open issue
-        run: |
-          gh issue --repo ${{ github.repository }} \
-            create --title "Issue title" --body "Issue body"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   build-and-push:
     name: Build and push
     runs-on: ubuntu-latest
@@ -42,11 +26,9 @@ jobs:
       - name: Log into the container registry
         uses: docker/login-action@v3
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Push image
         run: |
           docker push jhonatasilva/devops_nlw:${{ steps.generate_sha.outputs.sha }}
-          
