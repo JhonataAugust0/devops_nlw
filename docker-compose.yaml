@@ -38,3 +38,6 @@ services:
 networks:
   passin:
     driver: bridge
+
+volumes:
+  db:
