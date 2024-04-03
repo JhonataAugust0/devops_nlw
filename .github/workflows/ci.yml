@@ -1,26 +1,23 @@
 name: CI
 
-
-on: 
-  push: 
-    branches: 
+on:
+  push:
+    branches:
       - master
 
-jobs: 
+jobs:
   build-and-push:
-    name: 'Build and Push'
+    name: 'Build and push'
     runs-on: ubuntu-latest
 
-  steps:
+    steps:
     - name: Checkout
       uses: actions/checkout@v4
 
-  # Configuração para criar uma tag na imagem docker usando o hash do commit
-  - name: Generate sha 
-    id: generate_sha
-    run:
-      SHA=$(echo $GITHUB_SHA | head -c7)
-      echo "sha=$SHA >> $GITHUB_OUTPUT"
-
-  - name: Build docker image
-    run: docker build -t api- jhonatasilva/devops_nlw:${{ steps.generate_sha.outputs.sha }} .
+    - name: Generate sha
+      id: generate_sha
+      run: |
+        SHA=$(echo $GITHUB_SHA | head -c7)
+        echo "sha=${SHA}" >> $GITHUB_OUTPUT
+    - name: Build docker image
+      run: docker build -t jhonatasilva/devops_nlw:${{ steps.generate_sha.outputs.sha }} .
