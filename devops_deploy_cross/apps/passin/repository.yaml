@@ -9,12 +9,4 @@ metadata:
 
 stringData:
   type: git
-  url: git@github.com:JhonataAugust0/devops_nlw.git
-  sshPrivateKey: |
-    -----BEGIN OPENSSH PRIVATE KEY-----
-    b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-    QyNTUxOQAAACD9hvNxG4c9m67iA/w1oWeycjH423Xo11QBli1671JVYAAAAKBKC/inSgv4
-    pwAAAAtzc2gtZWQyNTUxOQAAACD9hvNxG4c9m67iA/w1oWeycjH423Xo11QBli1671JVYA
-    AAAECB8Ty40IPoGMMKFeAjvZu5DgypUxbqA/CZ1dW9VZeG3P2G83Ebhz2bruID/DWhZ7Jy
-    MfjbdejXVAGWLXrvUlVgAAAAG2pob24uYXVndXN0b3NpbHZhQGdtYWlsLmNvbQEC
-    -----END OPENSSH PRIVATE KEY-----
+  url: https://github.com/JhonataAugust0/devops_nlw.git
