@@ -63,4 +63,4 @@ kubectl apply -f k8s -n example-namespace
 
 E, claro, ao publicar o repositório em seu próprio github, o workflow de CI/CD fará isso autonomamente para você. Somente é preciso que você:
 1. Configure os secrets no seu repositório para a autenticação com o docker container registry para a publicação da imagem da apliação.
-2. Crie um namespace para o ArgoCD e execute-o conforme informado no arquivo [about_argocd]()!
+2. Crie um namespace para o ArgoCD e execute-o conforme informado no arquivo [about_argocd](https://github.com/JhonataAugust0/devops_nlw/blob/master/docs/about_argocd.md)!
