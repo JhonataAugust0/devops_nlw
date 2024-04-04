@@ -2,17 +2,17 @@
 
 Olá, a documentação deste projeto inicia aqui, abaixo há uma lista dos tópicos da documentação informando a ordem recomendada a segui-la. 
 
-- [Sobre a API]()
-- [Diagrama do banco de dados]()
-- [Sobre o docker-compose]()
-- [Sobre o Dockerfile]()
-- [Integração contínua (GitHub Actions)]()
-- [Kubernetes]()
+- [Sobre a API](https://github.com/JhonataAugust0/devops_nlw/blob/master/docs/about_api.md)
+- [Diagrama do banco de dados](https://github.com/JhonataAugust0/devops_nlw/blob/master/docs/database_diagram.md)
+- [Sobre o docker-compose](https://github.com/JhonataAugust0/devops_nlw/blob/master/docs/about_docker_compose.md)
+- [Sobre o Dockerfile](https://github.com/JhonataAugust0/devops_nlw/blob/master/docs/about_docker_image.md)
+- [Integração contínua (GitHub Actions)](https://github.com/JhonataAugust0/devops_nlw/blob/master/docs/ci_workflow.md)
+- [Kubernetes](https://github.com/JhonataAugust0/devops_nlw/blob/master/docs/about_kubernetes.md)
 - Entrega contínua 
-  -  [Helm]()
-  -  [Argocd]()
-- [Comece aqui]()
-- Extra: [Terraform]()
+  -  [Helm](https://github.com/JhonataAugust0/devops_nlw/blob/master/docs/about_helm.md)
+  -  [Argocd](https://github.com/JhonataAugust0/devops_nlw/blob/master/docs/about_argocd.md)
+- [Comece aqui](https://github.com/JhonataAugust0/devops_nlw/blob/master/docs/get_start.md)
+- Extra: [Terraform](https://github.com/JhonataAugust0/devops_nlw/blob/master/docs/about_terraform.md)
 
 O projeto contém uma API de gestão de participantes em eventos, entretanto, seu principal intuito se dá pelo propósito de estudar e esclarecer as práticas de Integração Contínua e Entrega Contínua (CI/CD), em um contexto de desenvolvimento de aplicações baseadas em contêineres.
 
