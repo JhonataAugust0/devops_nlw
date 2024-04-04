@@ -39,7 +39,6 @@ jobs:
       with:
         branch: master
         valueFile: 'deploy/values.yaml'
-        propertyPath: 'iamge.tag'
+        propertyPath: 'image.tag'
         value: ${{ steps.generate_sha.outputs.sha }}
         commitMessage: 'Update image in values heml to ${{ steps.generate_sha.outputs.sha }}'
-        
