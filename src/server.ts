@@ -12,6 +12,7 @@ import { getAttendeeBadge } from "./routes/get-attendee-badge";
 import { checkIn } from "./routes/check-in";
 import { getEventAttendees } from "./routes/get-event-attendees";
 import { errorHandler } from "./error-handler";
+import { health } from "./routes/health";
 
 export const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -45,9 +46,9 @@ app.register(getEvent)
 app.register(getAttendeeBadge)
 app.register(checkIn)
 app.register(getEventAttendees)
+app.register(health)
 
 app.setErrorHandler(errorHandler)
-
 app.listen({ port: 3333, host: '0.0.0.0' }).then(() => {
   console.log('HTTP server running!')
 })
