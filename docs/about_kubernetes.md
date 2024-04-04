@@ -12,4 +12,4 @@ O Deployment está configurado para garantir que cinco réplicas da aplicação 
 
 ## Configuração
 
-Para executar a aplicação no kubernetes, é necessário criar um cluster e um namespace dedicados, e isso é muito simples, você pode ver no [get_start]()!
+Para executar a aplicação no kubernetes, é necessário criar um cluster e um namespace dedicados, e isso é muito simples, você pode ver no [get_start](https://github.com/JhonataAugust0/devops_nlw/blob/master/docs/get_start.md)!
