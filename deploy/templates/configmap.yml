@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: devops-env
+
+data:
+  url: http://localhost:3333
+

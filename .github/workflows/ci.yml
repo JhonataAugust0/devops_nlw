@@ -33,3 +33,13 @@ jobs:
         docker push jhonatasilva/devops_nlw:${{ steps.generate_sha.outputs.sha }}
         docker tag jhonatasilva/devops_nlw:${{ steps.generate_sha.outputs.sha }} jhonatasilva/devops_nlw:latest
         docker push jhonatasilva/devops_nlw:latest
+
+    - name: Update image tag
+      uses: fjogeleit/yaml-update-action@main
+      with:
+        branch: master
+        valueFile: 'deploy/values.yaml'
+        propertyPath: 'iamge.tag'
+        value: ${{ steps.generate_sha.outputs.sha }}
+        commitMessage: 'Update image in values heml to ${{ steps.generate_sha.outputs.sha }}'
+        

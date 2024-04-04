@@ -11,7 +11,7 @@ spec:
    app: passin
   type: ClusterIP 
   ports:
-    - name: nginxs-service
+    - name: passin-service
       port: 80
       targetPort: 3333
       protocol: TCP
