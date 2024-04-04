@@ -2,7 +2,7 @@ replicaCount: 5
 image:
   repository: jhonatasilva/devops_nlw
   pullPolicy: Always
-  tag: 0970e2a
+  tag: efc08d2
   port: 3333
 imagePullSecrets: []
 nameOverride: ''
