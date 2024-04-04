@@ -18,7 +18,7 @@ spec:
     spec: 
       containers:
         - name: passin
-          image: jhonatasilva/devops_nlw:5e3ba3a
+          image: jhonatasilva/devops_nlw:8fe8d50
           env: 
           - name: DATABASE_URL
             valueFrom: 
